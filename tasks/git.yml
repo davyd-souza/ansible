@@ -1,0 +1,35 @@
+- name: Setup git name
+  community.general.git_config:
+    name: user.name
+    scope: global
+    value: "Davyd Souza"
+  tags:
+  - git-personal
+- name: Setup git email
+  community.general.git_config:
+    name: user.email
+    scope: global
+    value: "davyd.eduardo.souza@hotmail.com"
+  tags:
+  - git-personal
+- name: Setup vim as core editor
+  community.general.git_config:
+    name: core.editor
+    scope: global
+    value: vim
+  tags:
+  - git-core
+- name: Setup main as default branch
+  community.general.git_config:
+    name: init.defaultBranch
+    scope: global
+    value: main
+  tags:
+  - git-core
+- name: setup cache credentials for 15 minutes
+  community.general.git_config:
+    name: credential.helper
+    scope: global
+    value: cache --timeout=900
+  tags:
+  - git-core
