@@ -1,0 +1,13 @@
+- name: Install zsh
+  ansible.builtin.apt:
+    name: zsh
+  tags:
+  - zsh
+- name: Configure zsh as shell
+  shell: chsh -s `which zsh`
+  tags:
+  - zsh
+- name: Install Oh My Zsh
+  shell: curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s
+  tags:
+  - zsh

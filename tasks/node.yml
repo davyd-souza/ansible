@@ -1,0 +1,16 @@
+- name: Install node and npm
+  ansible.builtin.apt:
+    name: ['nodejs', 'npm']
+  tags:
+  - node
+- name: Install N
+  community.general.npm:
+    name: n
+    global: true
+    state: latest
+  tags:
+  - node
+- name: Install node version 20
+  shell: n 20
+  tags:
+  - node
