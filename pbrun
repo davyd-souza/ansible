@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# --ask-become-pass: to become root
+
+if [[ "$1" == "--pass" ]]; then
+    ansible-playbook --ask-vault-pass ${@:2}
+else
+    ansible-playbook $@
+fi

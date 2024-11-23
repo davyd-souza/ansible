@@ -1,10 +1,18 @@
 - hosts: localhost
-  become: true
+  vars:
+    source_key: "./.ssh/id_rsa"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
   pre_tasks:
   - name: Update apt cache
+    become: true
     ansible.builtin.apt:
       update_cache: yes
   tasks:
-  - include: tasks/zsh.yml
-  - include: tasks/node.yml
-  - include: tasks/git.yml
+    - ansible.builtin.import_tasks:
+        file: tasks/ssh.yml
+    - ansible.builtin.import_tasks:
+        file: tasks/git.yml
+    - ansible.builtin.import_tasks:
+        file: tasks/node.yml
+    - ansible.builtin.import_tasks:
+        file: tasks/zsh.yml
