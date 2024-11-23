@@ -26,7 +26,7 @@
     value: main
   tags:
     - git-core
-- name: setup cache credentials for 15 minutes
+- name: Setup cache credentials for 15 minutes
   community.general.git_config:
     name: credential.helper
     scope: global
