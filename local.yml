@@ -16,3 +16,5 @@
         file: tasks/node.yml
     - ansible.builtin.import_tasks:
         file: tasks/zsh.yml
+    - ansible.builtin.import_tasks:
+        file: tasks/neovim.yml

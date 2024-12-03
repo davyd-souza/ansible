@@ -1,8 +1,12 @@
 # Scripts to add:
 
-- neovim config
-- npm (typescript, yarn and npm)
-- dotfiles
-- ssh
-- essential packages
-    - gh
+- [ ] neovim
+- [ ] npm (typescript, yarn and npm)
+- [ ] dotfiles
+- [x] ssh
+- [ ] essential packages
+    - [ ] gh
+- [ ] productivity
+    - [ ] tmux
+    - [ ] fzf
+    - [ ] ripgrep
