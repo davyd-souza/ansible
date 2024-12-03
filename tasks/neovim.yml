@@ -1,10 +1,3 @@
-- name: Install neovim dependencies
-  ansible.builtin.apt:
-    name: [ninja-build, gettext, cmake, unzip, curl, build-essential]
-    state: present
-  tags:
-    - build
-    - neovim
 - name: Clone neovim
   ansible.builtin.git:
     repo: 'https://github.com/neovim/neovim'
@@ -13,6 +6,7 @@
     version: stable
   tags:
     - neovim
+
 - name: Build binaries
   community.general.make:
     chdir: "{{ lookup('env', 'HOME') }}/neovim"
@@ -20,7 +14,8 @@
       CMAKE_BUILD_TYPE: RelWithDebInfo
   tags:
     - neovim
-- name: Install neovim\
+
+- name: Install neovim
   community.general.make:
     chdir: "{{ lookup('env', 'HOME') }}/neovim"
     target: install

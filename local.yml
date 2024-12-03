@@ -9,6 +9,8 @@
       update_cache: yes
   tasks:
     - ansible.builtin.import_tasks:
+        file: tasks/core.yml
+    - ansible.builtin.import_tasks:
         file: tasks/ssh.yml
     - ansible.builtin.import_tasks:
         file: tasks/git.yml

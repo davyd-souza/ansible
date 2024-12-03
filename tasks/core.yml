@@ -1,0 +1,14 @@
+- name: Intalling programming languages (lua)
+  ansible.builtin.apt:
+    name: ["lua5.3"]
+    state: present
+  tags:
+    - core
+
+- name: Install neovim dependencies (ninja-build, gettext, cmake, unzip, curl, build-essential)
+  ansible.builtin.apt:
+    name: ["ninja-build", "gettext", "cmake", "unzip", "curl", "build-essential"]
+    state: present
+  tags:
+    - core
+    - neovim
