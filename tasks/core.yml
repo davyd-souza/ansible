@@ -4,8 +4,9 @@
     state: present
   tags:
     - core
+    - neovim
 
-- name: Install neovim dependencies (ninja-build, gettext, cmake, unzip, curl, build-essential)
+- name: Installing neovim dependencies (ninja-build, gettext, cmake, unzip, curl, build-essential)
   ansible.builtin.apt:
     name: ["ninja-build", "gettext", "cmake", "unzip", "curl", "build-essential"]
     state: present
