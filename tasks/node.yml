@@ -3,6 +3,7 @@
     name: ['nodejs', 'npm']
   tags:
     - node
+
 - name: Install N
   community.general.npm:
     name: n
@@ -10,6 +11,7 @@
     state: latest
   tags:
     - node
+
 - name: Install node version 20
   shell: n 20
   tags:
