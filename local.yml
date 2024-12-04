@@ -15,6 +15,8 @@
     - ansible.builtin.import_tasks:
         file: tasks/git.yml
     - ansible.builtin.import_tasks:
+        file: tasks/dotfiles.yml
+    - ansible.builtin.import_tasks:
         file: tasks/node.yml
     - ansible.builtin.import_tasks:
         file: tasks/zsh.yml

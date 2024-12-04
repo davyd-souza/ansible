@@ -1,0 +1,22 @@
+- name: Intalling stow
+  ansible.builtin.apt:
+    name: stow
+    state: present
+  tags:
+    - dotfiles
+
+- name: Clone .dotfiles
+  ansible.builtin.git:
+    repo: "https://github.com/davyd-souza/.dotfiles.git"
+    dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
+    clone: true
+    recursive: true
+  tags:
+    - dotfiles
+
+- name: Stow dotfiles
+  ansible.builtin.shell:
+    cmd: stow .
+    chdir: "{{ lookup('env', 'HOME') }}/.dotfiles"
+  tags:
+    - dotfiles
